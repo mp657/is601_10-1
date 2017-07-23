@@ -38,6 +38,13 @@ switch ($action) {
         }
         // convert date strings to DateTime objects
         // and use a try/catch to make sure the dates are valid
+	try {
+	    $invoice_date_o = new DateTime($invoice_date_s);
+	    $due_date_o = new DateTime($due_date_s);
+	    } catch (Exception $e) {
+	    $message = 'Please enter the date in valid format.';
+	    break;
+	    }
 
         // make sure the due date is after the invoice date
 
