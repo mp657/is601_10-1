@@ -32,7 +32,10 @@ switch ($action) {
         $due_date_s = filter_input(INPUT_POST, 'due_date');
 
         // make sure the user enters both dates
-
+        if (empty($invoice_date_s) || empty($due_date_s)) {
+           $message = 'Please enter both dates.';
+           break;
+        }
         // convert date strings to DateTime objects
         // and use a try/catch to make sure the dates are valid
 
