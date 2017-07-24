@@ -51,9 +51,10 @@ switch ($action) {
 	    $message = 'The due date must be later than the invoice date.';
 	    break;
 	}
+	$format_string = 'F j, Y';
         // format both dates
-        $invoice_date_f = 'not implemented yet';
-        $due_date_f = 'not implemented yet'; 
+        $invoice_date_f = $invoice_date_o->format($format_string);
+        $due_date_f = $due_date_o->format($format_string);
         
         // get the current date and time and format it
         $current_date_f = 'not implemented yet';
